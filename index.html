@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multilingual Scheme Helper</title>
+  <style>body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 350px;
+  background: white;
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+select, button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.output {
+  margin-top: 15px;
+  background: #e9ecef;
+  padding: 10px;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Multilingual Government Scheme Helper</h1>
+    <p>Simple language me government schemes samjhiye</p>
+
+    <label>Select Language:</label>
+    <select id="language">
+      <option value="hindi">Hindi</option>
+      <option value="english">English</option>
+    </select>
+
+    <label>Select Scheme:</label>
+    <select id="scheme">
+      <option value="pmay">PM Awas Yojana</option>
+      <option value="ujjwala">Ujjwala Yojana</option>
+    </select>
+
+    <button onclick="showScheme()">Show Details</button>
+
+    <div id="output" class="output"></div>
+  </div>
+
+  <script>function showScheme() {
+  let language = document.getElementById("language").value;
+  let scheme = document.getElementById("scheme").value;
+  let output = document.getElementById("output");
+
+  if (language === "hindi" && scheme === "pmay") {
+    output.innerHTML =
+      "<b>PM Awas Yojana:</b><br>" +
+      "Ye scheme ghar banane ke liye hoti hai.<br>" +
+      "Isme sarkar paisa deti hai.";
+  }
+
+  else if (language === "hindi" && scheme === "ujjwala") {
+    output.innerHTML =
+      "<b>Ujjwala Yojana:</b><br>" +
+      "Is scheme me free gas connection milta hai.<br>" +
+      "Ye garib parivaron ke liye hai.";
+  }
+
+  else if (language === "english" && scheme === "pmay") {
+    output.innerHTML =
+      "<b>PM Awas Yojana:</b><br>" +
+      "This scheme helps people build houses.<br>" +
+      "Government provides financial support.";
+  }
+
+  else if (language === "english" && scheme === "ujjwala") {
+    output.innerHTML =
+      "<b>Ujjwala Yojana:</b><br>" +
+      "This scheme provides free gas connections.<br>" +
+      "It is for poor families.";
+  }
+}
+</script>
+</body>
+</html>
